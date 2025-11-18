@@ -1,0 +1,139 @@
+[
+  {
+    "version": 0,
+    "inputs": [
+      {
+        "previousOutpoint": {
+          "transactionId": "0000000000000000000000000000000000000000000000000000019a77278bc9",
+          "index": 0
+        },
+        "signatureScript": "4149ed250093790032631718a43c7c8ca085d072e1a979a1170ab7716242dc2654f33cc9da045bb52e5e3ec602bf6b2855083c0153ca3fed9fef43c1042ec02e0801",
+        "sequence": "0",
+        "sigOpCount": 1
+      },
+      {
+        "previousOutpoint": {
+          "transactionId": "0000000000000000000000000000000000000000000000000000019a77278bc9",
+          "index": 0
+        },
+        "signatureScript": "41ffc34ad2e205a7a80031d00cd6ce52085b83f874c6ca7913903a8ccf635da5693cf9e561ff8fea680f0217ed001d7fab8d0cb629b5a70b2536fe862fdce65d3901",
+        "sequence": "0",
+        "sigOpCount": 1
+      }
+    ],
+    "outputs": [
+      {
+        "amount": "200000000000",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "207bc04196f1125e4f2676cd09ed14afb77223b1f62177da5488346323eaa91a69ac"
+        }
+      },
+      {
+        "amount": "1000000000",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "2049c2cda3510d0f7ca348be9c9d5ade55122bb7cba99cf36f32c90a1de5e2bd1bac"
+        }
+      },
+      {
+        "amount": "198999996434",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "20a430afb04abfee7fcb519409dc083f35226c3e7b7e0e1189366e1d5844452111ac"
+        }
+      }
+    ],
+    "lockTime": "0",
+    "subnetworkId": "0000000000000000000000000000000000000000",
+    "gas": "0",
+    "payload": "",
+    "mass": "3434"
+  },
+  {
+    "version": 0,
+    "inputs": [
+      {
+        "previousOutpoint": {
+          "transactionId": "0000000000000000000000000000000000000000000000000000019a77278bc9",
+          "index": 0
+        },
+        "signatureScript": "412bcccedc9f5781d8672ead88e9859bbb6d1551cb760472ca33d7bc5c953e32c62312554bbb56fa26dc03d98b1eeea889149f755294f865e2da1dde786a1dd57401",
+        "sequence": "0",
+        "sigOpCount": 1
+      },
+      {
+        "previousOutpoint": {
+          "transactionId": "0000000000000000000000000000000000000000000000000000019a77278bc9",
+          "index": 0
+        },
+        "signatureScript": "41b479f788601b165350c60dfa2bef6fde21659ebfbbd2a31c5cc68d1396498398c4eb66a3abc8c856d387071613135c193e0ba06f028048fd6ca07b6dd285d55101",
+        "sequence": "0",
+        "sigOpCount": 1
+      }
+    ],
+    "outputs": [
+      {
+        "amount": "200000000000",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "20a6f52e7eefed34cbb2b55ad65e335d9c2596e10448da5c8ffaf5269886bcdc4aac"
+        }
+      },
+      {
+        "amount": "1000000000",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "2049c2cda3510d0f7ca348be9c9d5ade55122bb7cba99cf36f32c90a1de5e2bd1bac"
+        }
+      },
+      {
+        "amount": "198999996434",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "20a430afb04abfee7fcb519409dc083f35226c3e7b7e0e1189366e1d5844452111ac"
+        }
+      }
+    ],
+    "lockTime": "0",
+    "subnetworkId": "0000000000000000000000000000000000000000",
+    "gas": "0",
+    "payload": "",
+    "mass": "3434"
+  },
+  {
+    "version": 0,
+    "inputs": [
+      {
+        "previousOutpoint": {
+          "transactionId": "0000000000000000000000000000000000000000000000000000019a77278bc9",
+          "index": 0
+        },
+        "signatureScript": "41822b8c428f24707e0fb69f42416d505f2273752057d056c3fd302d6601940f03c9d862acb1f35b9a8d6cc1f149eb2a30bb90bb2d8c83cb7fb31a239fbefe410e01",
+        "sequence": "0",
+        "sigOpCount": 1
+      }
+    ],
+    "outputs": [
+      {
+        "amount": "200000000",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "207bc04196f1125e4f2676cd09ed14afb77223b1f62177da5488346323eaa91a69ac"
+        }
+      },
+      {
+        "amount": "199799995000",
+        "scriptPublicKey": {
+          "version": 0,
+          "scriptPublicKey": "20a430afb04abfee7fcb519409dc083f35226c3e7b7e0e1189366e1d5844452111ac"
+        }
+      }
+    ],
+    "lockTime": "0",
+    "subnetworkId": "0000000000000000000000000000000000000000",
+    "gas": "0",
+    "payload": "",
+    "mass": "5000"
+  }
+]

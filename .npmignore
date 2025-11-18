@@ -1,0 +1,4 @@
+.editorconfig
+.github/*
+.nvmrc
+test/*

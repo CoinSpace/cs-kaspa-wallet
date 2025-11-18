@@ -1,0 +1,33 @@
+{
+  "name": "@coinspace/cs-kaspa-wallet",
+  "version": "0.0.0",
+  "description": "Kaspa Wallet for Coin Wallet",
+  "author": "Coin Wallet <support@coin.space> (https://coin.space/)",
+  "license": "MIT",
+  "main": "./index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./symbols": "./lib/symbols.js"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint --report-unused-disable-directives ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CoinSpace/cs-solana-wallet.git"
+  },
+  "dependencies": {
+    "kaspalib": "^0.0.2"
+  },
+  "peerDependencies": {
+    "@coinspace/cs-common": "^1.1.12"
+  },
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "eslint-config-coinspace": "^3.0.0",
+    "mocha": "^11.3.0",
+    "sinon": "^21.0.0"
+  }
+}
