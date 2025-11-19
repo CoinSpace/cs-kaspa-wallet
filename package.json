@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CoinSpace/cs-solana-wallet.git"
+    "url": "https://github.com/CoinSpace/cs-kaspa-wallet.git"
   },
   "dependencies": {
     "kaspalib": "^0.0.2"
