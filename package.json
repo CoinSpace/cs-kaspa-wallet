@@ -19,7 +19,7 @@
     "url": "https://github.com/CoinSpace/cs-kaspa-wallet.git"
   },
   "dependencies": {
-    "kaspalib": "^0.0.2"
+    "kaspalib": "^0.0.3"
   },
   "peerDependencies": {
     "@coinspace/cs-common": "^1.1.12"
