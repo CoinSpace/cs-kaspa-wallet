@@ -1,6 +1,6 @@
 {
   "name": "@coinspace/cs-kaspa-wallet",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Kaspa Wallet for Coin Wallet",
   "author": "Coin Wallet <support@coin.space> (https://coin.space/)",
   "license": "MIT",
