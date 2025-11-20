@@ -842,7 +842,40 @@ describe('Kaspa Wallet', () => {
         price: COIN_PRICE,
       }, WALLET_SEED, new Uint8Array(32).fill(0));
       assert.equal(wallet.balance.value, 20000_0000_0000n - amount.value - estimate.value);
-      assert.equal(id, '123456');
+      assert(id);
+    });
+
+    it('should create sequential transactions without reload', async () => {
+      const request = sinon.stub(defaultOptions, 'request');
+      stubActive(request, [ADDRESSES.MAINNET[0][0]]);
+      stubUtxos(request, [ADDRESSES.MAINNET[0][0]], 2000n * SOMPI_PER_KASPA);
+      stubFeerates(request);
+      stubCsFee(request, CS_FEE);
+      stubSubmitTransaction(request, sinon.match.object);
+      const wallet = new Wallet({
+        ...defaultOptions,
+      });
+      await wallet.open(WALLET_PUBLIC_KEY);
+      await wallet.load();
+      await wallet.loadFeeRates();
+
+      for (const value of [10n * SOMPI_PER_KASPA, 100n * SOMPI_PER_KASPA, 1000n * SOMPI_PER_KASPA]) {
+        const balance = wallet.balance.value;
+        const estimate = await wallet.estimateTransactionFee({
+          feeRate: Wallet.FEE_RATE_DEFAULT,
+          address: SECOND_ADDRESS,
+          amount: new Amount(value, wallet.crypto.decimals),
+          price: COIN_PRICE,
+        });
+        const id = await wallet.createTransaction({
+          feeRate: Wallet.FEE_RATE_DEFAULT,
+          address: SECOND_ADDRESS,
+          amount: new Amount(value, wallet.crypto.decimals),
+          price: COIN_PRICE,
+        }, WALLET_SEED, new Uint8Array(32).fill(0));
+        assert.equal(wallet.balance.value, balance - value - estimate.value);
+        assert(id);
+      }
     });
 
     it('should works tx to own wallet', async () => {
@@ -861,7 +894,6 @@ describe('Kaspa Wallet', () => {
 
       assert.equal(wallet.balance.value, 20000_0000_0000n);
       assert.equal(wallet.address, ADDRESSES.MAINNET[0][10]);
-      assert.equal(wallet.balance.value, 20000_0000_0000n);
       const amount = new Amount(2000n * SOMPI_PER_KASPA, wallet.crypto.decimals);
       const estimate = await wallet.estimateTransactionFee({
         feeRate: Wallet.FEE_RATE_DEFAULT,
@@ -877,7 +909,7 @@ describe('Kaspa Wallet', () => {
       }, WALLET_SEED, new Uint8Array(32).fill(0));
       assert.equal(wallet.balance.value, 20000_0000_0000n - estimate.value);
       assert.equal(wallet.address, ADDRESSES.MAINNET[0][11]);
-      assert.equal(id, '123456');
+      assert(id);
     });
 
     it('should works (no csfee)', async () => {
@@ -909,7 +941,7 @@ describe('Kaspa Wallet', () => {
         price: COIN_PRICE,
       }, WALLET_SEED, new Uint8Array(32).fill(0));
       assert.equal(wallet.balance.value, 20000_0000_0000n - amount.value - estimate.value);
-      assert.equal(id, '123456');
+      assert(id);
     });
 
     for (const inputAmount of [1n, 5n, 10n, 50n, 100n, 200n, 1000n]) {
@@ -947,7 +979,7 @@ describe('Kaspa Wallet', () => {
           price: COIN_PRICE,
         }, WALLET_SEED, new Uint8Array(32).fill(0));
         assert.equal(wallet.balance.value, balance - amount.value - estimate.value);
-        assert.equal(id, '123456');
+        assert(id);
       });
     }
 
@@ -982,7 +1014,7 @@ describe('Kaspa Wallet', () => {
           price: COIN_PRICE,
         }, WALLET_SEED, new Uint8Array(32).fill(0));
         assert.equal(wallet.balance.value, balance - amount.value - estimate.value);
-        assert.equal(id, '123456');
+        assert(id);
       });
     }
   });

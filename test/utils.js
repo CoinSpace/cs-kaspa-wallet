@@ -100,7 +100,7 @@ export function stubSubmitTransaction(request, transaction) {
     baseURL: 'node',
     data: { transaction },
     headers: sinon.match.object,
-  }).resolves({ transactionId: '123456' });
+  }).resolves({ transactionId: '01'.repeat(32) });
 }
 
 export function stubLoadTransactions(request, transactions) {
