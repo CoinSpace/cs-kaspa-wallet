@@ -859,21 +859,23 @@ describe('Kaspa Wallet', () => {
       await wallet.load();
       await wallet.loadFeeRates();
 
-      for (const value of [10n * SOMPI_PER_KASPA, 100n * SOMPI_PER_KASPA, 1000n * SOMPI_PER_KASPA]) {
+      for (const value of [10n, 50n, 100n, 1000n, 10n, 2n, 1n, 1n]) {
         const balance = wallet.balance.value;
+        const amount = new Amount(value * SOMPI_PER_KASPA, wallet.crypto.decimals);
+        assert(balance > 0n);
         const estimate = await wallet.estimateTransactionFee({
           feeRate: Wallet.FEE_RATE_DEFAULT,
           address: SECOND_ADDRESS,
-          amount: new Amount(value, wallet.crypto.decimals),
+          amount,
           price: COIN_PRICE,
         });
         const id = await wallet.createTransaction({
           feeRate: Wallet.FEE_RATE_DEFAULT,
           address: SECOND_ADDRESS,
-          amount: new Amount(value, wallet.crypto.decimals),
+          amount,
           price: COIN_PRICE,
         }, WALLET_SEED, new Uint8Array(32).fill(0));
-        assert.equal(wallet.balance.value, balance - value - estimate.value);
+        assert.equal(wallet.balance.value, balance - amount.value - estimate.value);
         assert(id);
       }
     });
